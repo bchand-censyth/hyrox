@@ -134,8 +134,8 @@ footer a{color:var(--acc)}
 
 <section id="plan">
   <div class="tools">
-    <button class="btn" onclick="all(1)">Expand all</button>
-    <button class="btn" onclick="all(0)">Collapse all</button>
+    <button class="btn" onclick="expandAll(1)">Expand all</button>
+    <button class="btn" onclick="expandAll(0)">Collapse all</button>
     <button class="btn" onclick="today()">Jump to today</button>
     <button class="btn" onclick="reset()">Reset ticks</button>
   </div>
@@ -1776,7 +1776,7 @@ footer a{color:var(--acc)}
 var RACE=new Date(2026,8,20), START=new Date(2026,7,3), N=49, done_=[];
 function cd(){var t=Math.ceil((RACE-new Date())/864e5);document.getElementById('cd').textContent=t>0?t:(t===0?'TODAY':'&mdash;');}
 function tog(i){document.getElementById('d'+i).classList.toggle('open');}
-function all(v){document.querySelectorAll('.day').forEach(function(d){
+function expandAll(v){document.querySelectorAll('.day').forEach(function(d){
   if(d.style.display==='none')return; v?d.classList.add('open'):d.classList.remove('open');});}
 function done(i){var c=document.getElementById('c'+i);c.classList.toggle('on');
   done_[i]=c.classList.contains('on');prog();}
